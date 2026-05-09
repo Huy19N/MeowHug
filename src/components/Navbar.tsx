@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const navItems = [
   { label: 'Home', href: '#', active: true },
@@ -9,13 +9,37 @@ const navItems = [
 ];
 
 const Navbar: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // Scrolling down and past the top margin
+        setIsVisible(false);
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full" style={{ pointerEvents: 'auto' }}>
-      <div className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+      style={{ pointerEvents: 'auto' }}
+    >
+      <div className="flex items-center justify-between px-6 md:px-12 lg:px-16 py-6 w-full">
         {/* Logo */}
         <a
           href="#"
-          className="font-display text-3xl tracking-tight"
+          className="font-display text-4xl tracking-tight"
           style={{
             color: '#FFFFFF',
             fontFamily: "'Instrument Serif', serif",
@@ -26,7 +50,7 @@ const Navbar: React.FC = () => {
         </a>
 
         {/* Menu Items */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <li key={item.label}>
               <a
@@ -36,6 +60,7 @@ const Navbar: React.FC = () => {
                   color: item.active ? '#FFFFFF' : 'rgba(255,255,255,0.6)',
                   fontFamily: "'Inter', sans-serif",
                   textShadow: '0 1px 6px rgba(0,0,0,0.2)',
+                  letterSpacing: '0.02em',
                 }}
               >
                 {item.label}
@@ -47,12 +72,13 @@ const Navbar: React.FC = () => {
         {/* CTA Button */}
         <a
           href="#shop"
-          className="hidden md:inline-flex items-center rounded-full px-6 py-2.5 text-sm transition-all duration-200 hover:scale-105 font-body"
+          className="hidden md:inline-flex items-center rounded-full px-8 py-3 text-sm transition-all duration-200 hover:scale-105 font-body"
           style={{
             backgroundColor: 'rgba(255,255,255,0.15)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
             border: '1px solid rgba(255,255,255,0.25)',
+            padding: '3px 4px',
             color: '#FFFFFF',
             fontFamily: "'Inter', sans-serif",
           }}

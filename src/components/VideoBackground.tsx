@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import catVideo from '../assets/cat_video_2.mp4';
 
-const TOTAL_FRAMES = 120; // We'll extract this many frames from the video
+const TOTAL_FRAMES = 80; // We'll extract this many frames from the video
 
 const VideoBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
