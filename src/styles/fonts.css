@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Font Definitions — Aethera
+   Display: Instrument Serif (headings, logo)
+   Body: Inter (navigation, descriptions)
+   ========================================================================== */
+
+.font-display {
+  font-family: 'Instrument Serif', serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
