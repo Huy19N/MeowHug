@@ -168,7 +168,7 @@ const BubbleShopSection: React.FC = () => {
       style={{
         minHeight: '100vh',
         background:
-          'linear-gradient(180deg, #000000 0%, #0a1a18 8%, #c8e6df 30%, #e8f5f0 50%, #c8e6df 70%, #0a1a18 92%, #000000 100%)',
+          'linear-gradient(180deg, #dcf0ea 0%, #c8e6df 20%, #e8f5f0 50%, #e4f2ed 80%, #dcf0ea 100%)',
       }}
     >
       {/* Section heading */}

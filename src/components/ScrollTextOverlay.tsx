@@ -168,6 +168,7 @@ const ScrollTextOverlay: React.FC = () => {
                   WebkitBackdropFilter: 'blur(20px)',
                   border: '1px solid rgba(255,255,255,0.25)',
                   color: '#FFFFFF',
+                  padding: '10px 30px',
                   fontFamily: "'Inter', sans-serif",
                   pointerEvents: 'auto',
                 }}

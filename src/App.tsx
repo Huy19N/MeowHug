@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import VideoBackground from './components/VideoBackground';
 import ScrollTextOverlay from './components/ScrollTextOverlay';
 import BubbleShopSection from './components/BubbleShopSection';
+import CollectionSection from './components/CollectionSection';
 
 const App: React.FC = () => {
   return (
@@ -21,8 +22,12 @@ const App: React.FC = () => {
 
       {/* ===== SECTION 2: Bubble Shop ===== */}
       <BubbleShopSection />
+
+      {/* ===== SECTION 3: Product Collection ===== */}
+      <CollectionSection />
     </div>
   );
 };
 
 export default App;
+
