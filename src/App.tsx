@@ -16,7 +16,7 @@ const App: React.FC = () => {
         setFooterHeight(footerRef.current.offsetHeight);
       }
     };
-    
+
     // Initial update
     setTimeout(updateFooterHeight, 100);
     window.addEventListener('resize', updateFooterHeight);
@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
   return (
     <div className="relative w-full bg-black">
-      <main 
+      <main
         className="relative z-10 bg-transparent transition-all duration-300"
         style={{ marginBottom: `${footerHeight}px` }}
       >
@@ -52,7 +52,7 @@ const App: React.FC = () => {
       </main>
 
       {/* ===== FOOTER: Sticky Reveal underneath ===== */}
-      <div 
+      <div
         ref={footerRef as any}
         className="fixed bottom-0 left-0 w-full z-0"
       >

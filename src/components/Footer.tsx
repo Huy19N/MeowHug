@@ -24,7 +24,7 @@ const GithubIcon = ({ size = 20 }) => (
 const Footer: React.FC = () => {
   return (
     <footer className="w-full h-[500px] bg-[#eaf4ec] text-[#2c4031] flex flex-col justify-between py-12 px-6 md:px-16 relative z-0">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+      <div className="flex flex-col md:flex-row justify-around items-start md:items-center gap-10">
         {/* Brand Logo and Description */}
         <div className="max-w-md">
           <a
@@ -38,27 +38,27 @@ const Footer: React.FC = () => {
             MeowHug<sup className="text-xl align-super">®</sup>
           </a>
           <p className="font-body text-sm leading-relaxed text-[#4a6350] mb-6">
-            Khám phá phong cách tối giản thanh lịch, nơi sự tinh tế giao thoa với sự thoải mái.
-            Mọi thiết kế của chúng tôi đều hướng đến việc mang lại trải nghiệm hoàn hảo và vẻ đẹp mộc mạc nhất.
+            Discover elegant minimalist style, where sophistication meets comfort.
+            All our designs aim to provide a perfect experience and the purest rustic beauty.
           </p>
           <div className="flex items-center gap-2 text-sm font-medium text-[#3b5241]">
             <MapPin size={18} />
-            <span>Việt Nam</span>
+            <span>Viet Nam</span>
           </div>
         </div>
 
         {/* Links and Info */}
         <div className="grid grid-cols-2 gap-12 font-body text-sm">
           <div>
-            <h4 className="font-semibold text-[#1a2e20] mb-4 uppercase tracking-wider text-xs">Thông tin Web</h4>
+            <h4 className="font-semibold text-[#1a2e20] mb-4 uppercase tracking-wider text-xs">Website Info</h4>
             <ul className="space-y-3 text-[#4a6350]">
-              <li>Thẩm mỹ thiết kế: Tối giản, thanh lịch</li>
-              <li>Phong cách: Pastel Trắng/Xanh</li>
-              <li>Người thiết kế & phát triển: Huy</li>
+              <li>Design aesthetic: Minimalist, elegant</li>
+              <li>Style: Pastel White/Green</li>
+              <li>Designed & Developed by: Huy</li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-[#1a2e20] mb-4 uppercase tracking-wider text-xs">Theo dõi chúng tôi</h4>
+            <h4 className="font-semibold text-[#1a2e20] mb-4 uppercase tracking-wider text-xs">Follow me</h4>
             <div className="flex gap-4">
               <a href="https://www.instagram.com/_jahwi/" target="_blank" className="p-2 bg-white/60 rounded-full hover:bg-white transition-colors duration-200 shadow-sm text-[#3b5241]">
                 <InstagramIcon size={20} />
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
 
       <div className="mt-12 pt-8 border-t border-[#c6dfcd] flex flex-col md:flex-row justify-between items-center text-xs text-[#5c7a64] font-body">
         <p>© {new Date().getFullYear()} MeowHug. All rights reserved.</p>
-        <p className="mt-2 md:mt-0">Tài nguyên hình ảnh minh họa thuộc bản quyền từ Pinterest.</p>
+        <p className="mt-2 md:mt-0">Illustration image resources are copyrighted by Pinterest.</p>
       </div>
     </footer>
   );
