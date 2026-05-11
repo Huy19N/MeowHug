@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
       style={{ pointerEvents: 'auto' }}
     >
-      <div className="flex items-center justify-between px-6 md:px-12 lg:px-16 py-6 w-full">
+      <div className="flex items-center justify-between px-2 md:px-12 lg:px-16 pt-12 pb-6 w-full">
         {/* Logo */}
         <a
           href="#"

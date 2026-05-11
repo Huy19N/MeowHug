@@ -11,6 +11,7 @@ const VideoBackground: React.FC = () => {
   const rafRef = useRef<number>(0);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isReady, setIsReady] = useState(false);
+  const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -89,8 +90,16 @@ const VideoBackground: React.FC = () => {
     if (!ctx) return;
 
     const updateScroll = () => {
-      // Only scrub within the hero section (first 500vh)
       const heroHeight = window.innerHeight * 5; // 500vh
+      
+      // Hide video background when scrolled past hero section to reveal footer
+      if (window.scrollY > heroHeight) {
+        setOpacity(0);
+      } else {
+        setOpacity(1);
+      }
+
+      // Only scrub within the hero section (first 500vh)
       const maxScroll = heroHeight - window.innerHeight;
       if (maxScroll <= 0) return;
       const progress = Math.max(0, Math.min(1, window.scrollY / maxScroll));
@@ -123,7 +132,7 @@ const VideoBackground: React.FC = () => {
   }, [isReady]);
 
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none">
+    <div className={`fixed inset-0 z-0 pointer-events-none transition-opacity duration-300 ease-in-out ${opacity === 0 ? 'opacity-0' : 'opacity-100'}`}>
       {/* Loading overlay */}
       {!isReady && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-white">
