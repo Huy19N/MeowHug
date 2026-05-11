@@ -48,3 +48,5 @@ Make sure you have [Node.js](https://nodejs.org/) installed (v16 or higher).
    ```bash
    git clone https://github.com/your-username/meowhug.git
    cd meowhug
+   npm install
+   npm run dev
