@@ -50,3 +50,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed (v16 or higher).
    cd meowhug
    npm install
    npm run dev
+   ```
+
+## 🙏 Acknowledgements
+- All image and video resources used in this website are sourced from [Pinterest](https://www.pinterest.com/).
